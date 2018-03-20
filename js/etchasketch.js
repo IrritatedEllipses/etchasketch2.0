@@ -12,12 +12,12 @@ function genDivs(gridSize) {
         cell.style.width = (750 / gridSize - 2).toString() + 'px'
         cell.style.height = (750 / gridSize - 2).toString() + 'px'
         main.appendChild(cell);
-        var hoverChange = document.querySelectorAll(".gridSquare")
-        hoverChange.forEach(holding => {
-            holding.addEventListener('mouseover', function (event) {
+        main.addEventListener('mouseover', function (event) {
+           if (event.target.className.toLowerCase() == "gridsquare") {
                 event.target.style.backgroundColor = 'black'
-            })
+            }
         })
+        
 
     }
 }
