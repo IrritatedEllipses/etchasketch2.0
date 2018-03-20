@@ -32,7 +32,7 @@ function clearGrid(){
 
 // Button for setting Grid
 var setGrid = () => {
-    let rowSize = window.prompt("How many rows would you like the grid to have?");
+    let rowSize = window.prompt("How many squares dost thou need? (Don't go above 128, bad things happen)");
     clearGrid();
     genDivs(rowSize);
 }
