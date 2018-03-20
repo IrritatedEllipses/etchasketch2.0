@@ -1,0 +1,30 @@
+.wrapper {
+    margin: auto;
+    width: 50%;
+    font-size:0;
+    text-align: center;
+
+}
+#mainGrid {
+    margin: auto;
+    display: flex;
+    
+}
+.row {
+    
+    flex-direction: row;
+    border: solid;
+    border-width: 1px;
+    margin: 0;
+    background-color: #fff;
+  
+
+}
+
+.gridSquare {
+    flex-direction: column;
+    border: solid;
+    border-width: 1px;
+    background-color: #fff;
+}
+
