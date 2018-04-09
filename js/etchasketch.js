@@ -16,9 +16,7 @@ function genDivs(gridSize) {
            if (event.target.className.toLowerCase() == "gridsquare") {
                 event.target.style.backgroundColor = 'black'
             }
-        })
-        
-
+        })        
     }
 }
 
@@ -30,11 +28,31 @@ function clearGrid(){
     }
 }
 
+
 // Button for setting Grid
 var setGrid = () => {
-    let rowSize = window.prompt("How many squares dost thou need? (Don't go above 128, bad things happen)");
-    clearGrid();
-    genDivs(rowSize);
+    let rowQuery = window.prompt("How many rows would you like to etch in? I think I could do up to 64!");
+    if (rowQuery > 64) {
+        alert("I'm not really comfortable handling that many rows! How about sixty four instead?")
+        
+        clearGrid()
+        genDivs(64);
+    }
+    else if (rowQuery < 2) {
+        alert("You need at least a couple of squares! Otherwise this would be very boring. Here's four.")
+        clearGrid()
+        genDivs(2)
+    }
+    else if (isNaN(rowQuery) == true) {
+        alert("I'm sorry, I only understand numerical values. Here's a couple of rows to get you going")
+        clearGrid()
+        genDivs(8)
+    }
+    else {
+        clearGrid();
+        genDivs(rowQuery)
+        
+    }
 }
 
 // Button Event Listeners
