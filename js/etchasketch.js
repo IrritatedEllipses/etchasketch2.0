@@ -1,6 +1,6 @@
-// var color = "black"
-// var rainbow = false
+var color = document.getElementById('colors').value
 var main = document.querySelector('#mainGrid');
+var setGridBtn = document.querySelector("#setGridBtn")
 
 // Main Grid Generator
 function genDivs(gridSize) {
@@ -12,11 +12,7 @@ function genDivs(gridSize) {
         cell.style.width = (750 / gridSize - 2).toString() + 'px'
         cell.style.height = (750 / gridSize - 2).toString() + 'px'
         main.appendChild(cell);
-        main.addEventListener('mouseover', function (event) {
-           if (event.target.className.toLowerCase() == "gridsquare") {
-                event.target.style.backgroundColor = 'black'
-            }
-        })        
+             
     }
 }
 
@@ -28,8 +24,7 @@ function clearGrid(){
     }
 }
 
-
-// Button for setting Grid
+// Setting Grid
 var setGrid = () => {
     let rowQuery = window.prompt("How many rows would you like to etch in? I think I could do up to 64!");
     if (rowQuery > 64) {
@@ -55,7 +50,16 @@ var setGrid = () => {
     }
 }
 
-// Button Event Listeners
-var setGridBtn = document.querySelector("#setGridBtn")
+
+// Event Listeners
+
 setGridBtn.addEventListener("click", setGrid)
+
+// Color Listener
+main.addEventListener('mouseover', function (event) {
+    if (event.target.className.toLowerCase() == "gridsquare") {
+        event.target.style.backgroundColor = colors.options[colors.selectedIndex].value
+    }
+})   
+
 window.onload = genDivs(8)
