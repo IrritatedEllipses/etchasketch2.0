@@ -63,3 +63,4 @@ main.addEventListener('mouseover', function (event) {
 })   
 
 window.onload = genDivs(8)
+
