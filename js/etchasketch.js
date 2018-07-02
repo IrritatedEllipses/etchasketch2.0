@@ -9,8 +9,8 @@ function genDivs(gridSize) {
     for (x = 1; x <= gridSize * gridSize; x++) {
         let cell = document.createElement('div');
         cell.className = "gridSquare";
-        cell.style.width = (750 / gridSize - 2).toString() + 'px'
-        cell.style.height = (750 / gridSize - 2).toString() + 'px'
+        cell.style.width = (500 / gridSize - 2).toString() + 'px'
+        cell.style.height = (500 / gridSize - 2).toString() + 'px'
         main.appendChild(cell);
              
     }
